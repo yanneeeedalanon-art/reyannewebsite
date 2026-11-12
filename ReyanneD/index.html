@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Awareness | Save Our Planet</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f8f0;
+            color: #263b2b;
+            line-height: 1.7;
+        }
+
+        /* NAVIGATION */
+        header {
+            background: #ffffff;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.07);
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: 800;
+            color: #28613b;
+        }
+
+        .logo span {
+            color: #8caf65;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #354b39;
+            margin-left: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #78a84c;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            min-height: 600px;
+            background:
+                linear-gradient(rgba(15, 48, 26, 0.65),
+                rgba(15, 48, 26, 0.65)),
+                url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=85');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 80px 10%;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-content h1 {
+            font-size: 55px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: #b8e58b;
+        }
+
+        .hero-content p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #edf5e9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #8bbd61;
+            color: white;
+            text-decoration: none;
+            padding: 13px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #659541;
+            transform: translateY(-3px);
+        }
+
+        /* GENERAL SECTION */
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            color: #28613b;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #718071;
+            font-size: 14px;
+        }
+
+        /* ABOUT */
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            height: 370px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .about-text h2 {
+            color: #28613b;
+            font-size: 32px;
+            margin-bottom: 18px;
+        }
+
+        .about-text p {
+            color: #647568;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        /* ENVIRONMENTAL ISSUES */
+        .issues {
+            background: #eaf1e3;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 23px;
+        }
+
+        .card-content h3 {
+            color: #28613b;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .card-content p {
+            color: #718071;
+            font-size: 14px;
+        }
+
+        /* TIPS */
+        .tips-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .tip {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .tip .icon {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+
+        .tip h3 {
+            color: #28613b;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .tip p {
+            font-size: 14px;
+            color: #718071;
+        }
+
+        /* CALL TO ACTION */
+        .cta {
+            text-align: center;
+            background: linear-gradient(120deg, #285d38, #669c52);
+            color: white;
+            padding: 75px 10%;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            margin-bottom: 25px;
+            color: #e2f0df;
+        }
+
+        .cta .btn {
+            background: white;
+            color: #28613b;
+        }
+
+        .cta .btn:hover {
+            background: #e6f2df;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #193b27;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #d0dfd0;
+        }
+
+        footer .footer-logo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 850px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 12px;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+            }
+
+            .card-container,
+            .tips-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .hero {
+                min-height: 500px;
+                padding: 60px 7%;
+            }
+
+            .hero-content h1 {
+                font-size: 34px;
+            }
+
+            section {
+                padding: 55px 7%;
+            }
+
+            .card-container,
+            .tips-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 27px;
+            }
+
+            nav a {
+                margin: 0 5px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header>
+        <div class="logo">ECO<span>WORLD.</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#issues">Issues</a>
+            <a href="#tips">Solutions</a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <div class="hero" id="home">
+        <div class="hero-content">
+            <h1>Protect Nature,<br> <span>Protect Our Future.</span></h1>
+
+            <p>
+                Environmental awareness starts with us.
+                Together, we can protect our planet, reduce pollution,
+                and create a cleaner and greener future for the next generation.
+            </p>
+
+            <a href="#about" class="btn">Explore More</a>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <div class="about">
+
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=85"
+                 alt="Beautiful green environment">
+
+            <div class="about-text">
+                <h2>What is Environmental Awareness?</h2>
+
+                <p>
+                    Environmental awareness means understanding the importance
+                    of protecting our natural surroundings and recognizing
+                    how human activities affect the environment.
+                </p>
+
+                <p>
+                    It encourages people to take responsibility for nature
+                    by reducing waste, conserving natural resources,
+                    planting trees, and keeping the surroundings clean.
+                </p>
+
+                <p>
+                    Small actions can make a big difference.
+                    Protecting the environment today means creating
+                    a healthier world tomorrow.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ENVIRONMENTAL ISSUES -->
+    <section class="issues" id="issues">
+
+        <div class="section-title">
+            <h2>Environmental Problems</h2>
+            <p>Understand the problems that threaten our planet.</p>
+        </div>
+
+        <div class="card-container">
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=85"
+                     alt="Air pollution">
+                <div class="card-content">
+                    <h3>Air Pollution</h3>
+                    <p>
+                        Smoke from vehicles, factories, and burning waste
+                        pollutes the air and affects human health.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?auto=format&fit=crop&w=800&q=85"
+                     alt="Plastic pollution">
+                <div class="card-content">
+                    <h3>Plastic Pollution</h3>
+                    <p>
+                        Improper disposal of plastic waste harms marine
+                        animals, wildlife, and our natural surroundings.
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=85"
+                     alt="Deforestation">
+                <div class="card-content">
+                    <h3>Deforestation</h3>
+                    <p>
+                        Cutting down too many trees destroys animal habitats,
+                        reduces biodiversity, and contributes to climate change.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SOLUTIONS SECTION -->
+    <section id="tips">
+
+        <div class="section-title">
+            <h2>How Can We Help?</h2>
+            <p>Simple everyday actions to protect our environment.</p>
+        </div>
+
+        <div class="tips-container">
+
+            <div class="tip">
+                <div class="icon">♻️</div>
+                <h3>Reduce, Reuse, Recycle</h3>
+                <p>
+                    Practice proper waste segregation and recycle
+                    materials to reduce garbage.
+                </p>
+            </div>
+
+            <div class="tip">
+                <div class="icon">🌳</div>
+                <h3>Plant More Trees</h3>
+                <p>
+                    Plant trees and protect forests to maintain
+                    clean air and a healthy environment.
+                </p>
+            </div>
+
+            <div class="tip">
+                <div class="icon">💧</div>
+                <h3>Save Water</h3>
+                <p>
+                    Turn off faucets when not in use and avoid
+                    wasting clean water.
+                </p>
+            </div>
+
+            <div class="tip">
+                <div class="icon">⚡</div>
+                <h3>Save Energy</h3>
+                <p>
+                    Turn off lights and electrical appliances
+                    when they are not needed.
+                </p>
+            </div>
+
+            <div class="tip">
+                <div class="icon">🧹</div>
+                <h3>Keep Surroundings Clean</h3>
+                <p>
+                    Join community clean-up drives and always
+                    dispose of waste properly.
+                </p>
+            </div>
+
+            <div class="tip">
+                <div class="icon">🌱</div>
+                <h3>Spread Awareness</h3>
+                <p>
+                    Encourage friends and family to participate
+                    in protecting our environment.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section class="cta">
+        <h2>Be Part of the Change!</h2>
+
+        <p>
+            The Earth is our home. Let us work together
+            to protect nature and build a sustainable future.
+        </p>
+
+        <a href="#home" class="btn">Start Today</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">ECO WORLD 🌍</div>
+
+        <p>
+            Protect Our Planet. Preserve Our Future.
+        </p>
+
+        <p>
+            © 2026 Environmental Awareness | All Rights Reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
